@@ -1,0 +1,47 @@
+{
+  "name": "@nicodaimus/crypto",
+  "version": "0.1.0",
+  "description": "Shared encryption library for nicodAImus projects (oscar, chat)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./kdf": "./dist/kdf/index.js",
+    "./cipher": "./dist/cipher/index.js",
+    "./vault": "./dist/vault/index.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "format": "prettier --write 'src/**/*.ts'",
+    "benchmark": "tsx benchmarks/argon2-bench.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paxtiny/nicodaimus-crypto.git"
+  },
+  "author": "nicodAImus",
+  "license": "MIT",
+  "dependencies": {
+    "@noble/ciphers": "^2.1.1",
+    "@noble/curves": "^2.0.1",
+    "@noble/hashes": "^2.0.1"
+  },
+  "optionalDependencies": {
+    "argon2": "^0.44.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "prettier": "^3.4.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
